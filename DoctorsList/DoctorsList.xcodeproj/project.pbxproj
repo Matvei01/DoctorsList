@@ -32,6 +32,9 @@
 		1AA52EDE2C7499DA006F4969 /* SF-Pro-Display-UltralightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1AA52EC92C7499DA006F4969 /* SF-Pro-Display-UltralightItalic.otf */; };
 		1AA52EDF2C7499DA006F4969 /* SFPro_Font_License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1AA52ECA2C7499DA006F4969 /* SFPro_Font_License.rtf */; };
 		1AA52EE62C749FB7006F4969 /* Extension + Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52EE52C749FB7006F4969 /* Extension + Font.swift */; };
+		1AA52EE92C7513B2006F4969 /* TabItemTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52EE82C7513B2006F4969 /* TabItemTextModifier.swift */; };
+		1AA52EEB2C7513FE006F4969 /* Extension + Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52EEA2C7513FE006F4969 /* Extension + Text.swift */; };
+		1AA52EED2C751C71006F4969 /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52EEC2C751C71006F4969 /* Extension + String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		1AA52ECA2C7499DA006F4969 /* SFPro_Font_License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = SFPro_Font_License.rtf; sourceTree = "<group>"; };
 		1AA52EE02C749C44006F4969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AA52EE52C749FB7006F4969 /* Extension + Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Font.swift"; sourceTree = "<group>"; };
+		1AA52EE82C7513B2006F4969 /* TabItemTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemTextModifier.swift; sourceTree = "<group>"; };
+		1AA52EEA2C7513FE006F4969 /* Extension + Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Text.swift"; sourceTree = "<group>"; };
+		1AA52EEC2C751C71006F4969 /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,7 @@
 		1AA52EA22C73773D006F4969 /* DoctorsList */ = {
 			isa = PBXGroup;
 			children = (
+				1AA52EE72C750F92006F4969 /* CustomModifiers */,
 				1AA52EB52C73D028006F4969 /* App */,
 				1AA52EE22C749F54006F4969 /* Extensions */,
 				1AA52EB12C73CF72006F4969 /* Models */,
@@ -200,8 +207,18 @@
 			isa = PBXGroup;
 			children = (
 				1AA52EE52C749FB7006F4969 /* Extension + Font.swift */,
+				1AA52EEA2C7513FE006F4969 /* Extension + Text.swift */,
+				1AA52EEC2C751C71006F4969 /* Extension + String.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1AA52EE72C750F92006F4969 /* CustomModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				1AA52EE82C7513B2006F4969 /* TabItemTextModifier.swift */,
+			);
+			path = CustomModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +313,9 @@
 			files = (
 				1AA52EA62C73773D006F4969 /* ContentView.swift in Sources */,
 				1AA52EE62C749FB7006F4969 /* Extension + Font.swift in Sources */,
+				1AA52EED2C751C71006F4969 /* Extension + String.swift in Sources */,
+				1AA52EEB2C7513FE006F4969 /* Extension + Text.swift in Sources */,
+				1AA52EE92C7513B2006F4969 /* TabItemTextModifier.swift in Sources */,
 				1AA52EA42C73773D006F4969 /* DoctorsListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

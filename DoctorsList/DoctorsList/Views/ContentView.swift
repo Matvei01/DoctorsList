@@ -8,14 +8,63 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedIndex = 0
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            TabView(selection: $selectedIndex) {
+                tabViewItem(
+                    view: Text("Главная").font(.largeTitle),
+                    title: "Главная",
+                    defaultImage: .TabItemImage.homeDefault(),
+                    selectedImage: .TabItemImage.homeSelected(),
+                    index: 0
+                )
+                
+                tabViewItem(
+                    view: Text("Приёмы").font(.largeTitle),
+                    title: "Приёмы",
+                    defaultImage: .TabItemImage.appointmentsDefault(),
+                    selectedImage: .TabItemImage.appointmentsSelected(),
+                    index: 1
+                )
+                
+                tabViewItem(
+                    view: Text("Чат").font(.largeTitle),
+                    title: "Чат",
+                    defaultImage: .TabItemImage.chatDefault(),
+                    selectedImage: .TabItemImage.chatSelected(),
+                    index: 2
+                )
+                .badge(1)
+                
+                tabViewItem(
+                    view: Text("Профиль").font(.largeTitle),
+                    title: "Профиль",
+                    defaultImage: .TabItemImage.profileDefault(),
+                    selectedImage: .TabItemImage.profileSelected(),
+                    index: 3
+                )
+            }
+            .tint(.appPink)
         }
-        .padding()
+    }
+    
+    @ViewBuilder
+    private func tabViewItem<V: View>(view: V,
+                                      title: String,
+                                      defaultImage: String,
+                                      selectedImage: String,
+                                      index: Int) -> some View {
+        view
+            .tabItem {
+                VStack {
+                    Image(selectedIndex == index ? selectedImage : defaultImage)
+                    Text(title)
+                        .tabItemTextStyle()
+                }
+            }
+            .tag(index)
     }
 }
 
