@@ -26,6 +26,7 @@ struct DoctorCardView: View {
                 .padding(.bottom, 16)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 8))
     }
     
@@ -48,8 +49,7 @@ struct DoctorCardView: View {
                     .semiboldFont()
                 starRatingView
                 Text("Педиатр・стаж 9 лет")
-                    .font(.SFProDisplay.regular(size: 14))
-                    .foregroundStyle(.appDarkGray)
+                    .regularFont()
                 Text("от 400 ₽")
                     .semiboldFont()
             }

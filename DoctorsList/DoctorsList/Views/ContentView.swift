@@ -14,7 +14,7 @@ struct ContentView: View {
         VStack {
             TabView(selection: $selectedIndex) {
                 tabViewItem(
-                    view: Text("Главная").font(.largeTitle),
+                    view: DoctorsListView(),
                     title: "Главная",
                     defaultImage: .TabItemImage.homeDefault(),
                     selectedImage: .TabItemImage.homeSelected(),
