@@ -61,7 +61,6 @@ struct ContentView: View {
                 VStack {
                     Image(selectedIndex == index ? selectedImage : defaultImage)
                     Text(title)
-                        .tabItemTextStyle()
                 }
             }
             .tag(index)

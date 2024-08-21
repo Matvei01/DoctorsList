@@ -8,7 +8,11 @@
 import SwiftUI
 
 extension Text {
-    func tabItemTextStyle() -> some View {
-        self.modifier(TabItemTextModifier())
+    func semiboldFont() -> some View {
+        self
+            .font(.SFProDisplay.semibold(size: 16))
+            .foregroundStyle(.appBlack)
     }
 }
+
+

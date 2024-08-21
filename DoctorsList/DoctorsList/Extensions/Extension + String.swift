@@ -41,6 +41,16 @@ extension String {
             return "profileDefault"
         }
     }
+    
+    struct LikeImage {
+        static func heartSelected() -> String {
+            return "heartSelected"
+        }
+        
+        static func heartDefault() -> String {
+            return "heartDefault"
+        }
+    }
 }
 
 
