@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct AppointmentButtonView: View {
-    
+struct AppointmentButtonView<Destination: View>: View {
     var buttonText: String
     var buttonColor: Color
+    var destination: Destination
     
     var body: some View {
         HStack {
-            Button(action: { print("Записаться") }) {
+            NavigationLink(destination: destination) {
                 Text(buttonText)
                     .frame(maxWidth: .infinity)
                     .font(.SFProDisplay.semibold(size: 16))
@@ -30,6 +30,6 @@ struct AppointmentButtonView: View {
 #Preview {
     AppointmentButtonView(
         buttonText: "Записаться",
-        buttonColor: Color.appPink
+        buttonColor: Color.appPink, destination: DetailsCardView()
     )
 }
