@@ -10,75 +10,75 @@ import SwiftUI
 extension Font {
     struct SFProDisplay {
         static func black(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-Black", size: size)
+            return Font.custom("SFProDisplay-Black", size: size)
         }
         
         static func blackItalic(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-BlackItalic", size: size)
+            return Font.custom("SFProDisplay-BlackItalic", size: size)
         }
         
         static func bold(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-Bold", size: size)
+            return Font.custom("SFProDisplay-Bold", size: size)
         }
         
         static func boldItalic(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-BoldItalic", size: size)
+            return Font.custom("SFProDisplay-BoldItalic", size: size)
         }
         
         static func heavy(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-Heavy", size: size)
+            return Font.custom("SFProDisplay-Heavy", size: size)
         }
         
         static func heavyItalic(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-HeavyItalic", size: size)
+            return Font.custom("SFProDisplay-HeavyItalic", size: size)
         }
         
         static func light(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-Light", size: size)
+            return Font.custom("SFProDisplay-Light", size: size)
         }
         
         static func lightItalic(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-LightItalic", size: size)
+            return Font.custom("SFProDisplay-LightItalic", size: size)
         }
         
         static func medium(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-Medium", size: size)
+            return Font.custom("SFProDisplay-Medium", size: size)
         }
         
         static func mediumItalic(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-MediumItalic", size: size)
+            return Font.custom("SFProDisplay-MediumItalic", size: size)
         }
         
         static func regular(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-Regular", size: size)
+            return Font.custom("SFProDisplay-Regular", size: size)
         }
         
         static func regularItalic(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-RegularItalic", size: size)
+            return Font.custom("SFProDisplay-Italic", size: size)
         }
         
         static func semibold(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-Semibold", size: size)
+            return Font.custom("SFProDisplay-Semibold", size: size)
         }
         
         static func semiboldItalic(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-SemiboldItalic", size: size)
+            return Font.custom("SFProDisplay-SemiboldItalic", size: size)
         }
         
         static func thin(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-Thin", size: size)
+            return Font.custom("SFProDisplay-Thin", size: size)
         }
         
         static func thinItalic(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-ThinItalic", size: size)
+            return Font.custom("SFProDisplay-ThinItalic", size: size)
         }
         
         static func ultralight(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-Ultralight", size: size)
+            return Font.custom("SFProDisplay-Ultralight", size: size)
         }
         
         static func ultralightItalic(size: CGFloat) -> Font {
-            return Font.custom("SF-Pro-Display-UltralightItalic", size: size)
+            return Font.custom("SFProDisplay-UltralightItalic", size: size)
         }
     }
 }
