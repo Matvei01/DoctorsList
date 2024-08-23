@@ -12,6 +12,7 @@ struct DoctorCardView: View {
     
     var buttonText: String
     var buttonColor: Color
+    var index: Int
     
     var body: some View {
         VStack(spacing: 15) {
@@ -20,10 +21,11 @@ struct DoctorCardView: View {
                 .padding(.vertical, 20)
             AppointmentButtonView(
                 buttonText: buttonText,
-                buttonColor: buttonColor
+                buttonColor: buttonColor,
+                destination: DetailsCardView()
             )
-                .padding(.horizontal, 16)
-                .padding(.bottom, 16)
+            .padding(.horizontal, 16)
+            .padding(.bottom, 16)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.white)
@@ -32,11 +34,7 @@ struct DoctorCardView: View {
     
     private var doctorInfoView: some View {
         HStack(alignment: .top, spacing: 16) {
-            Image(.doctor)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 50, height: 50)
-                .clipShape(Circle())
+            DoctorImageView()
                 .alignmentGuide(.top) { _ in 0 }
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
@@ -74,5 +72,9 @@ struct DoctorCardView: View {
 }
 
 #Preview {
-    DoctorCardView(buttonText: "Записаться", buttonColor: .appPink)
+    DoctorCardView(
+        buttonText: "Записаться",
+        buttonColor: .appPink,
+        index: 0
+    )
 }
