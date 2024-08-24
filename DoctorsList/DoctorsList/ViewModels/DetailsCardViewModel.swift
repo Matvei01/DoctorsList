@@ -22,30 +22,23 @@ protocol DetailsCardViewModelProtocol: AnyObject {
 final class DetailsCardViewModel: ObservableObject, DetailsCardViewModelProtocol {
     @Published private(set) var doctor: User
     
+    private let defaultDoctorateLabel = "Врач высшей категории"
+    private let defaultUniversity = "Южно-Уральский государственный медицинский университет"
+    private let defaultWorkExperience = "Челябинская областная клиническая больница"
+    
     var doctorInfo: [DoctorInfoType] {
         var info = [DoctorInfoType]()
         
         info.append(.experience(years: doctor.seniority))
         
-        if !doctor.categoryLabel.isEmpty {
-            info.append(.doctorate(label: doctor.categoryLabel))
-        } else {
-            info.append(.doctorate(label: "Врач высшей категории"))
-        }
+        let doctorateLabel = doctor.categoryLabel.isEmpty ? defaultDoctorateLabel : doctor.categoryLabel
+        info.append(.doctorate(label: doctorateLabel))
         
-        if let university = doctor.higherEducation.first?.university {
-            info.append(.education(university: university))
-        } else {
-            info.append(.education(university: "Южно-Уральский государственный медицинский университет"))
-        }
+        let university = doctor.higherEducation.first?.university ?? defaultUniversity
+        info.append(.education(university: university))
         
-        if let workExperience = doctor.workExperience, !workExperience.isEmpty {
-            for experience in workExperience {
-                info.append(.workExperience(organization: experience.organization))
-            }
-        } else {
-            info.append(.workExperience(organization: "Челябинская областная клиническая больница"))
-        }
+        let lastWorkExperience = doctor.workExpirience.last?.organization ?? defaultWorkExperience
+        info.append(.workExperience(organization: lastWorkExperience))
         
         return info
     }

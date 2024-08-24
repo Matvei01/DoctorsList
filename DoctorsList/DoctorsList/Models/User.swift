@@ -31,7 +31,7 @@ struct User: Identifiable, Decodable {
     let videoChatPrice: Double
     let avatar: URL?
     let higherEducation: [HigherEducation]
-    let workExperience: [WorkExperience]?
+    let workExpirience: [WorkExperience]
     let specialization: [Specialization]
     let categoryLabel: String
     let isFavorite: Bool
