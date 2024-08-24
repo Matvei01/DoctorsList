@@ -16,7 +16,7 @@ final class UserViewModel: ObservableObject, UserViewModelProtocol {
     @Published private(set) var users: [User] = []
     
     private let userDataLoader: UserDataLoader
-
+    
     init(userDataLoader: UserDataLoader = .shared) {
         self.userDataLoader = userDataLoader
     }

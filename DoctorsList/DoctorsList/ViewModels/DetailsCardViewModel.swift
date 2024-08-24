@@ -21,7 +21,7 @@ protocol DetailsCardViewModelProtocol: AnyObject {
 
 final class DetailsCardViewModel: ObservableObject, DetailsCardViewModelProtocol {
     @Published private(set) var doctor: User
-
+    
     var doctorInfo: [DoctorInfoType] {
         var info = [DoctorInfoType]()
         
@@ -32,13 +32,13 @@ final class DetailsCardViewModel: ObservableObject, DetailsCardViewModelProtocol
         } else {
             info.append(.doctorate(label: "Врач высшей категории"))
         }
-
+        
         if let university = doctor.higherEducation.first?.university {
             info.append(.education(university: university))
         } else {
             info.append(.education(university: "Южно-Уральский государственный медицинский университет"))
         }
-
+        
         if let workExperience = doctor.workExperience, !workExperience.isEmpty {
             for experience in workExperience {
                 info.append(.workExperience(organization: experience.organization))
@@ -46,7 +46,7 @@ final class DetailsCardViewModel: ObservableObject, DetailsCardViewModelProtocol
         } else {
             info.append(.workExperience(organization: "Челябинская областная клиническая больница"))
         }
-
+        
         return info
     }
     

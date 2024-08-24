@@ -8,19 +8,17 @@
 import SwiftUI
 
 struct AppointmentButtonView<Destination: View>: View {
-    var buttonText: String
-    var buttonColor: Color
     var destination: Destination
     
     var body: some View {
         HStack {
             NavigationLink(destination: destination) {
-                Text(buttonText)
+                Text("Записаться")
                     .frame(maxWidth: .infinity)
                     .font(.SFProDisplay.semibold(size: 16))
                     .foregroundStyle(.white)
                     .padding(.vertical, 15)
-                    .background(buttonColor)
+                    .background(Color.appPink)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
             }
         }
@@ -28,8 +26,6 @@ struct AppointmentButtonView<Destination: View>: View {
 }
 
 #Preview {
-    AppointmentButtonView(
-        buttonText: "Записаться",
-        buttonColor: Color.appPink, destination: DetailsCardView()
+    AppointmentButtonView(destination: Text("Text")
     )
 }

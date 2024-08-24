@@ -29,15 +29,13 @@ struct User: Identifiable, Decodable {
     let hospitalPrice: Double
     let textChatPrice: Double
     let videoChatPrice: Double
-    let homePrice: Double
     let avatar: URL?
     let higherEducation: [HigherEducation]
     let workExperience: [WorkExperience]?
     let specialization: [Specialization]
-    let scientificDegreeLabel: String
     let categoryLabel: String
     let isFavorite: Bool
-    let freeReceptionTime: [FreeTime]
+    let freeReceptionTime: [FreeReceptionTime]
 }
 
 struct HigherEducation: Decodable {
@@ -48,7 +46,7 @@ struct WorkExperience: Decodable {
     let organization: String
 }
 
-struct FreeTime: Decodable {
+struct FreeReceptionTime: Decodable {
     let time: Int
 }
 

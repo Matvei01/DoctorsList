@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct DetailsCardView: View {
+    @ObservedObject var viewModel: DetailsCardViewModel
+    
     var body: some View {
         ZStack {
             VStack(spacing: 26) {
-                CustomNavigationView(title: "Педиатор", showBackButton: true)
+                CustomNavigationView(
+                    title: viewModel.doctor.formattedSpecializations(),
+                    showBackButton: true
+                )
                 VStack(alignment: .leading, spacing: 24) {
                     VStack(alignment: .leading, spacing: 20) {
                         headerView
                         doctorInfoView
                         PriceInfoView(
                             anyText: "Стоимость услуг",
-                            priceText: "от 600 ₽",
+                            priceText: String(format: "от %.0f ₽", viewModel.doctor.hospitalPrice),
                             font: .SFProDisplay.semibold(size: 16)
                         )
                     }
@@ -34,11 +39,11 @@ struct DetailsCardView: View {
     
     private var headerView: some View {
         HStack(spacing: 16) {
-            DoctorImageView()
+            DoctorImageView(imageUrl: viewModel.doctor.avatar)
             VStack(alignment: .leading) {
-                Text("Семенова")
+                Text(viewModel.doctor.lastName)
                     .semiboldFont()
-                Text("Дарья Сергеевна")
+                Text("\(viewModel.doctor.firstName) \(viewModel.doctor.patronymic)")
                     .semiboldFont()
             }
         }
@@ -46,22 +51,30 @@ struct DetailsCardView: View {
     
     private var doctorInfoView: some View {
         VStack(alignment: .leading, spacing: 10) {
-            DoctorInfoTypeView(
-                image: .InfoImage.experience(),
-                textInfo: "Опыт работы: 27 лет"
-            )
-            DoctorInfoTypeView(
-                image: .InfoImage.doctorate(),
-                textInfo: "Врач высшей категории"
-            )
-            DoctorInfoTypeView(
-                image: .InfoImage.education(),
-                textInfo: "1-й ММИ им. И.М.Сеченова"
-            )
-            DoctorInfoTypeView(
-                image: .InfoImage.location(),
-                textInfo: "Детская клиника “РебёнОК”"
-            )
+            ForEach(viewModel.doctorInfo, id: \.self) { info in
+                switch info {
+                case .experience(let years):
+                    DoctorInfoTypeView(
+                        image: .InfoImage.experience(),
+                        textInfo: "Опыт работы: \(years) лет"
+                    )
+                case .doctorate(let label):
+                    DoctorInfoTypeView(
+                        image: .InfoImage.doctorate(),
+                        textInfo: label
+                    )
+                case .education(let university):
+                    DoctorInfoTypeView(
+                        image: .InfoImage.education(),
+                        textInfo: university
+                    )
+                case .workExperience(let organization):
+                    DoctorInfoTypeView(
+                        image: .InfoImage.location(),
+                        textInfo: organization
+                    )
+                }
+            }
         }
     }
     
@@ -74,15 +87,10 @@ struct DetailsCardView: View {
                 .lineSpacing(4)
             Spacer()
             AppointmentButtonView(
-                buttonText: "Записаться",
-                buttonColor: .appPink,
-                destination: DoctorPriceView()
+                destination: DoctorPriceView(viewModel: DoctorPriceViewModel(doctor: viewModel.doctor))
             )
-            .padding(.bottom, 10)
+            .padding(.bottom, 15)
         }
     }
 }
 
-#Preview {
-    DetailsCardView()
-}
