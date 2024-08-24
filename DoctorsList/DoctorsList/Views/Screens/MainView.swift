@@ -11,21 +11,22 @@ struct MainView: View {
     @State private var selectedIndex = 0
     
     var body: some View {
-        VStack(spacing: 0) {
-            switch selectedIndex {
-            case 0:
+        ZStack(alignment: .bottom) {
+            TabView(selection: $selectedIndex) {
                 DoctorsListView()
-            case 1:
-                Text("Приёмы").font(.largeTitle)
-            case 2:
-                Text("Чат").font(.largeTitle)
-            case 3:
-                Text("Профиль").font(.largeTitle)
-            default:
-                DoctorsListView()
+                    .tag(0)
+                Text("Приёмы")
+                    .font(.largeTitle)
+                    .tag(1)
+                Text("Чат")
+                    .font(.largeTitle)
+                    .tag(2)
+                Text("Профиль")
+                    .font(.largeTitle)
+                    .tag(3)
             }
+            .tint(.appPink)
             
-            Spacer()
             HStack {
                 homeTabBarItem()
                 Spacer()
@@ -36,7 +37,7 @@ struct MainView: View {
                 profileTabBarItem()
             }
             .padding(.horizontal, 26)
-            .padding(.vertical, 10)
+            .padding(.top, 15)
             .background(Color.white)
         }
     }
@@ -45,16 +46,19 @@ struct MainView: View {
 // MARK: -  Private Methods
 extension MainView {
     private func homeTabBarItem() -> some View {
-        tabBarItem(index: 0,
-                   title: "Главная",
-                   image: selectedIndex == 0 ? .TabItemImage.homeSelected() : .TabItemImage.homeDefault())
+        tabBarItem(
+            index: 0,
+            title: "Главная",
+            image: selectedIndex == 0 ? .TabItemImage.homeSelected() : .TabItemImage.homeDefault()
+        )
     }
     
     private func appointmentsTabBarItem() -> some View {
         tabBarItem(
             index: 1,
             title: "Приёмы",
-            image: selectedIndex == 1 ? .TabItemImage.appointmentsSelected() : .TabItemImage.appointmentsDefault())
+            image: selectedIndex == 1 ? .TabItemImage.appointmentsSelected() : .TabItemImage.appointmentsDefault()
+        )
     }
     
     private func chatTabBarItem() -> some View {
@@ -62,7 +66,8 @@ extension MainView {
             index: 2,
             title: "Чат",
             image: selectedIndex == 2 ? .TabItemImage.chatSelected() : .TabItemImage.chatDefault(),
-            showBadge: true, badgeCount: 1
+            showBadge: true,
+            badgeCount: 1
         )
     }
     
@@ -70,7 +75,8 @@ extension MainView {
         tabBarItem(
             index: 3,
             title: "Профиль",
-            image: selectedIndex == 3 ? .TabItemImage.profileSelected() : .TabItemImage.profileDefault())
+            image: selectedIndex == 3 ? .TabItemImage.profileSelected() : .TabItemImage.profileDefault()
+        )
     }
     
     private func tabBarItem(index: Int,
