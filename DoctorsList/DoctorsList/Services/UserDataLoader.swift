@@ -20,10 +20,7 @@ final class UserDataLoader {
         
         do {
             let data = try Data(contentsOf: url)
-            
             let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            
             let rootResponse = try decoder.decode(RootResponse.self, from: data)
             let users = rootResponse.record.data.users
             

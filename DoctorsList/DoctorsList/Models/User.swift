@@ -31,11 +31,30 @@ struct User: Identifiable, Decodable {
     let videoChatPrice: Double
     let avatar: URL?
     let higherEducation: [HigherEducation]
-    let workExpirience: [WorkExperience]
+    let workExperience: [WorkExperience]
     let specialization: [Specialization]
     let categoryLabel: String
     let isFavorite: Bool
     let freeReceptionTime: [FreeReceptionTime]
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case patronymic
+        case seniority
+        case ratingsRating = "ratings_rating"
+        case hospitalPrice = "hospital_price"
+        case textChatPrice = "text_chat_price"
+        case videoChatPrice = "video_chat_price"
+        case avatar
+        case higherEducation = "higher_education"
+        case workExperience = "work_expirience"
+        case specialization
+        case categoryLabel = "category_label"
+        case isFavorite = "is_favorite"
+        case freeReceptionTime = "free_reception_time"
+    }
 }
 
 struct HigherEducation: Decodable {
