@@ -41,20 +41,22 @@ struct DoctorsListView: View {
         }
     }
     
-    // Фильтрация врачей на основе выбранного фильтра и текста поиска
     private var filteredUsers: [User] {
         let filteredBySearch = viewModel.users.filter { user in
             searchText.isEmpty ? true : user.firstName.contains(searchText) || user.lastName.contains(searchText)
         }
         
+        let sortedUsers: [User]
         switch filterViewModel.selectedFilter {
         case .price:
-            return filteredBySearch.sorted { $0.hospitalPrice < $1.hospitalPrice }
+            sortedUsers = filteredBySearch.sorted { filterViewModel.isAscending ? $0.hospitalPrice < $1.hospitalPrice : $0.hospitalPrice > $1.hospitalPrice }
         case .experience:
-            return filteredBySearch.sorted { $0.seniority > $1.seniority }
+            sortedUsers = filteredBySearch.sorted { filterViewModel.isAscending ? $0.seniority < $1.seniority : $0.seniority > $1.seniority }
         case .rating:
-            return filteredBySearch.sorted { $0.ratingsRating > $1.ratingsRating }
+            sortedUsers = filteredBySearch.sorted { filterViewModel.isAscending ? $0.ratingsRating < $1.ratingsRating : $0.ratingsRating > $1.ratingsRating }
         }
+        
+        return sortedUsers
     }
 }
 

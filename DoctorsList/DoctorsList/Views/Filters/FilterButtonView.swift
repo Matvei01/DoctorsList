@@ -10,6 +10,7 @@ import SwiftUI
 struct FilterButtonView: View {
     var title: String
     var isSelected: Bool
+    var isAscending: Bool
     var action: () -> Void
     
     var body: some View {
@@ -19,7 +20,11 @@ struct FilterButtonView: View {
                     .font(.SFProDisplay.regular(size: 14))
                     .foregroundStyle(isSelected ? .white : .appDarkGray)
                 if isSelected {
-                    Image(.arrow)
+                    Image(systemName: isAscending ? "arrow.up" : "arrow.down")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 5, height: 10)
+                        .foregroundStyle(.white)
                 }
             }
             .padding(.vertical, 10)
@@ -37,6 +42,7 @@ struct FilterButtonView: View {
     FilterButtonView(
         title: "По стажу",
         isSelected: true,
+        isAscending: true,
         action: {}
     )
 }
