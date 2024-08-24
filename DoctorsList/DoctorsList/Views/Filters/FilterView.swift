@@ -15,10 +15,12 @@ struct FilterView: View {
             ForEach(viewModel.filters, id: \.self) { filter in
                 FilterButtonView(
                     title: filter.rawValue,
-                    isSelected: viewModel.selectedFilter == filter
-                ) {
-                    viewModel.selectFilter(filter)
-                }
+                    isSelected: viewModel.selectedFilter == filter,
+                    isAscending: viewModel.isAscending,
+                    action: {
+                        viewModel.selectFilter(filter)
+                    }
+                )
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: 8))

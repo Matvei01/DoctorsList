@@ -89,7 +89,7 @@ struct DetailsCardView: View {
             AppointmentButtonView(
                 destination: DoctorPriceView(viewModel: DoctorPriceViewModel(doctor: viewModel.doctor))
             )
-            .padding(.bottom, 15)
+            .padding(.bottom, 18)
         }
     }
 }
