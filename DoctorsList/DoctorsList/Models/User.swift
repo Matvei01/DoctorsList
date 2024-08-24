@@ -7,82 +7,62 @@
 
 import Foundation
 
-// Модель ответа
+struct RootResponse: Decodable {
+    let record: Record
+}
+
+struct Record: Decodable {
+    let data: UserResponse
+}
+
 struct UserResponse: Decodable {
     let users: [User]
 }
 
-// Модель корневого объекта
-struct RootResponse: Decodable {
-    let data: UserResponse
-}
-
-// Модель пользователя
-struct User: Decodable, Identifiable {
+struct User: Identifiable, Decodable {
     let id: String
-    let slug: String
     let firstName: String
-    let patronymic: String
     let lastName: String
-    let gender: String
-    let genderLabel: String
-    let specialization: [Specialization]
-    let ratings: [Rating]
-    let ratingsRating: Double
+    let patronymic: String
     let seniority: Int
+    let ratingsRating: Double
+    let hospitalPrice: Double
     let textChatPrice: Double
     let videoChatPrice: Double
     let homePrice: Double
-    let hospitalPrice: Double
     let avatar: URL?
-    let nearestReceptionTime: Date?
-    let freeReceptionTime: [Date]
-    let educationTypeLabel: String?
     let higherEducation: [HigherEducation]
-    let workExperience: [WorkExperience]
-    let rank: Int
-    let rankLabel: String
-    let scientificDegree: Int
+    let workExperience: [WorkExperience]?
+    let specialization: [Specialization]
     let scientificDegreeLabel: String
-    let category: Int
     let categoryLabel: String
     let isFavorite: Bool
+    let freeReceptionTime: [FreeTime]
 }
 
-// Модель для рейтинга
-struct Rating: Decodable {
-    let id: Int
-    let name: String
-    let value: Double
-}
-
-// Модель для высшего образования
 struct HigherEducation: Decodable {
-    let id: Int
     let university: String
-    let specialization: String
-    let qualification: String
-    let startDate: Date
-    let endDate: Date
-    let untilNow: Bool
-    let isModerated: Bool
 }
 
-// Модель для рабочего опыта
 struct WorkExperience: Decodable {
-    let id: Int
     let organization: String
-    let position: String
-    let startDate: Date
-    let endDate: Date?
-    let untilNow: Bool
-    let isModerated: Bool
 }
 
-// Модель для специальности
+struct FreeTime: Decodable {
+    let time: Int
+}
+
 struct Specialization: Decodable {
-    let id: Int
     let name: String
-    let isModerated: Bool
+}
+
+extension User {
+    func formattedSpecializations() -> String {
+        if specialization.isEmpty {
+            return "Иммунолог"
+        } else {
+            return specialization.map { $0.name }.joined(separator: "・")
+        }
+    }
 }
 
