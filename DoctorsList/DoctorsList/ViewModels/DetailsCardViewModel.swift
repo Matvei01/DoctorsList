@@ -37,7 +37,7 @@ final class DetailsCardViewModel: ObservableObject, DetailsCardViewModelProtocol
         let university = doctor.higherEducation.first?.university ?? defaultUniversity
         info.append(.education(university: university))
         
-        let lastWorkExperience = doctor.workExpirience.last?.organization ?? defaultWorkExperience
+        let lastWorkExperience = doctor.workExperience.last?.organization ?? defaultWorkExperience
         info.append(.workExperience(organization: lastWorkExperience))
         
         return info
