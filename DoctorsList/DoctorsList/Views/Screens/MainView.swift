@@ -62,7 +62,7 @@ extension MainView {
             index: 2,
             title: "Чат",
             image: selectedIndex == 2 ? .TabItemImage.chatSelected() : .TabItemImage.chatDefault(),
-            showBadge: true, badgeCount: 1 // Параметры для отображения badge
+            showBadge: true, badgeCount: 1
         )
     }
     
@@ -73,7 +73,11 @@ extension MainView {
             image: selectedIndex == 3 ? .TabItemImage.profileSelected() : .TabItemImage.profileDefault())
     }
     
-    private func tabBarItem(index: Int, title: String, image: String, showBadge: Bool = false, badgeCount: Int = 0) -> some View {
+    private func tabBarItem(index: Int,
+                            title: String,
+                            image: String,
+                            showBadge: Bool = false,
+                            badgeCount: Int = 0) -> some View {
         Button(action: {
             selectedIndex = index
         }) {

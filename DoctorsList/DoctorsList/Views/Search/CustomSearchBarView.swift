@@ -41,6 +41,13 @@ struct CustomSearchBarView: View {
             }
             .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 12))
+            .onChange(of: isFocused) {
+                if !isFocused {
+                    withAnimation {
+                        isEditing = false
+                    }
+                }
+            }
             
             if isEditing {
                 Button(action: {

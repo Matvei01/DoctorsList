@@ -1,15 +1,17 @@
 //
-//  DoctorImageView.swift
+//  CircularImageView.swift
 //  DoctorsList
 //
-//  Created by Matvei Khlestov on 21.08.2024.
+//  Created by Matvei Khlestov on 24.08.2024.
 //
 
 import SwiftUI
 
-struct DoctorImageView: View {
+struct CircularImageView: View {
+    var image: Image
+    
     var body: some View {
-        Image(.doctor)
+        image
             .resizable()
             .scaledToFill()
             .frame(width: 50, height: 50)
@@ -18,5 +20,5 @@ struct DoctorImageView: View {
 }
 
 #Preview {
-    DoctorImageView()
+    CircularImageView(image: Image(.plugPicture))
 }

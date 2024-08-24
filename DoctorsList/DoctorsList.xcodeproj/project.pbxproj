@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A4B53652C78D88A009DB6A4 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4B53642C78D88A009DB6A4 /* UserViewModel.swift */; };
+		1A4B53672C78DD6B009DB6A4 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4B53662C78DD6B009DB6A4 /* FilterViewModel.swift */; };
+		1A4B53692C78E805009DB6A4 /* DetailsCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4B53682C78E805009DB6A4 /* DetailsCardViewModel.swift */; };
+		1A4B536B2C78EAC6009DB6A4 /* DoctorPriceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4B536A2C78EAC6009DB6A4 /* DoctorPriceViewModel.swift */; };
+		1A4B53752C795F3A009DB6A4 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4B53742C795F3A009DB6A4 /* CircularImageView.swift */; };
 		1AA52EA42C73773D006F4969 /* DoctorsListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52EA32C73773D006F4969 /* DoctorsListApp.swift */; };
 		1AA52EA62C73773D006F4969 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52EA52C73773D006F4969 /* MainView.swift */; };
 		1AA52EA82C73773F006F4969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AA52EA72C73773F006F4969 /* Assets.xcassets */; };
@@ -48,9 +53,16 @@
 		1AA52F222C767734006F4969 /* ConsultationTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52F212C767734006F4969 /* ConsultationTypeView.swift */; };
 		1AA52F2C2C788A3B006F4969 /* CustomSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52F2B2C788A3B006F4969 /* CustomSearchBarView.swift */; };
 		1AA52F2E2C78A749006F4969 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52F2D2C78A749006F4969 /* User.swift */; };
+		1AA52F312C78B166006F4969 /* UserDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52F302C78B166006F4969 /* UserDataLoader.swift */; };
+		1AA52F332C78B382006F4969 /* 655b754e0574da7622c94aa4.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AA52F322C78B382006F4969 /* 655b754e0574da7622c94aa4.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A4B53642C78D88A009DB6A4 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		1A4B53662C78DD6B009DB6A4 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		1A4B53682C78E805009DB6A4 /* DetailsCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCardViewModel.swift; sourceTree = "<group>"; };
+		1A4B536A2C78EAC6009DB6A4 /* DoctorPriceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorPriceViewModel.swift; sourceTree = "<group>"; };
+		1A4B53742C795F3A009DB6A4 /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		1AA52EA02C73773D006F4969 /* DoctorsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA52EA32C73773D006F4969 /* DoctorsListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsListApp.swift; sourceTree = "<group>"; };
 		1AA52EA52C73773D006F4969 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -94,6 +106,8 @@
 		1AA52F212C767734006F4969 /* ConsultationTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationTypeView.swift; sourceTree = "<group>"; };
 		1AA52F2B2C788A3B006F4969 /* CustomSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBarView.swift; sourceTree = "<group>"; };
 		1AA52F2D2C78A749006F4969 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1AA52F302C78B166006F4969 /* UserDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataLoader.swift; sourceTree = "<group>"; };
+		1AA52F322C78B382006F4969 /* 655b754e0574da7622c94aa4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 655b754e0574da7622c94aa4.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +121,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A4B536C2C7957EA009DB6A4 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1AA52EA52C73773D006F4969 /* MainView.swift */,
+				1AA52F0C2C75CF6E006F4969 /* DoctorsListView.swift */,
+				1AA52F142C760486006F4969 /* DetailsCardView.swift */,
+				1AA52F1C2C7669EB006F4969 /* DoctorPriceView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1A4B536D2C795804009DB6A4 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				1AA52F102C75DA00006F4969 /* FilterButtonView.swift */,
+				1AA52F0E2C75D8F2006F4969 /* FilterView.swift */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		1A4B536E2C795842009DB6A4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1AA52EEE2C752827006F4969 /* DoctorCardView.swift */,
+				1AA52F1F2C766BE7006F4969 /* PriceInfoView.swift */,
+				1AA52F0A2C7555A2006F4969 /* AppointmentButtonView.swift */,
+				1AA52F162C760696006F4969 /* DoctorImageView.swift */,
+				1A4B53742C795F3A009DB6A4 /* CircularImageView.swift */,
+				1AA52F182C760ABE006F4969 /* DoctorInfoTypeView.swift */,
+				1AA52F212C767734006F4969 /* ConsultationTypeView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1A4B536F2C795894009DB6A4 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				1AA52F1A2C764DD6006F4969 /* CustomNavigationView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		1A4B53702C7958B5009DB6A4 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1AA52F2B2C788A3B006F4969 /* CustomSearchBarView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		1A4B53762C796447009DB6A4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1AA52EA72C73773F006F4969 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		1AA52E972C73773D006F4969 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +200,7 @@
 			children = (
 				1AA52EB52C73D028006F4969 /* App */,
 				1AA52EE22C749F54006F4969 /* Extensions */,
+				1AA52F2F2C78B0AF006F4969 /* Services */,
 				1AA52EB12C73CF72006F4969 /* Models */,
 				1AA52EB22C73CF86006F4969 /* Views */,
 				1AA52EB32C73CFA1006F4969 /* ViewModels */,
@@ -157,20 +230,11 @@
 		1AA52EB22C73CF86006F4969 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1AA52EA52C73773D006F4969 /* MainView.swift */,
-				1AA52F0C2C75CF6E006F4969 /* DoctorsListView.swift */,
-				1AA52EEE2C752827006F4969 /* DoctorCardView.swift */,
-				1AA52F142C760486006F4969 /* DetailsCardView.swift */,
-				1AA52F1C2C7669EB006F4969 /* DoctorPriceView.swift */,
-				1AA52F1F2C766BE7006F4969 /* PriceInfoView.swift */,
-				1AA52F102C75DA00006F4969 /* FilterButtonView.swift */,
-				1AA52F0E2C75D8F2006F4969 /* FilterView.swift */,
-				1AA52F0A2C7555A2006F4969 /* AppointmentButtonView.swift */,
-				1AA52F162C760696006F4969 /* DoctorImageView.swift */,
-				1AA52F182C760ABE006F4969 /* DoctorInfoTypeView.swift */,
-				1AA52F1A2C764DD6006F4969 /* CustomNavigationView.swift */,
-				1AA52F212C767734006F4969 /* ConsultationTypeView.swift */,
-				1AA52F2B2C788A3B006F4969 /* CustomSearchBarView.swift */,
+				1A4B536C2C7957EA009DB6A4 /* Screens */,
+				1A4B536E2C795842009DB6A4 /* Components */,
+				1A4B536D2C795804009DB6A4 /* Filters */,
+				1A4B53702C7958B5009DB6A4 /* Search */,
+				1A4B536F2C795894009DB6A4 /* Navigation */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +242,10 @@
 		1AA52EB32C73CFA1006F4969 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				1A4B53642C78D88A009DB6A4 /* UserViewModel.swift */,
+				1A4B53662C78DD6B009DB6A4 /* FilterViewModel.swift */,
+				1A4B53682C78E805009DB6A4 /* DetailsCardViewModel.swift */,
+				1A4B536A2C78EAC6009DB6A4 /* DoctorPriceViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -185,8 +253,9 @@
 		1AA52EB42C73CFF9006F4969 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1AA52F342C78B392006F4969 /* JSON */,
 				1AA52EB62C7499A1006F4969 /* Fonts */,
-				1AA52EA72C73773F006F4969 /* Assets.xcassets */,
+				1A4B53762C796447009DB6A4 /* Assets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -250,6 +319,22 @@
 				1AA52EEC2C751C71006F4969 /* Extension + String.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1AA52F2F2C78B0AF006F4969 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1AA52F302C78B166006F4969 /* UserDataLoader.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1AA52F342C78B392006F4969 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				1AA52F322C78B382006F4969 /* 655b754e0574da7622c94aa4.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +404,7 @@
 				1AA52EDA2C7499DA006F4969 /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
 				1AA52ED12C7499DA006F4969 /* SF-Pro-Display-Heavy.otf in Resources */,
 				1AA52EDD2C7499DA006F4969 /* SF-Pro-Display-Ultralight.otf in Resources */,
+				1AA52F332C78B382006F4969 /* 655b754e0574da7622c94aa4.json in Resources */,
 				1AA52ECF2C7499DA006F4969 /* SF-Pro-Display-Bold.otf in Resources */,
 				1AA52EDF2C7499DA006F4969 /* SFPro_Font_License.rtf in Resources */,
 				1AA52ED62C7499DA006F4969 /* SF-Pro-Display-MediumItalic.otf in Resources */,
@@ -348,8 +434,11 @@
 				1AA52F1D2C7669EC006F4969 /* DoctorPriceView.swift in Sources */,
 				1AA52F1B2C764DD6006F4969 /* CustomNavigationView.swift in Sources */,
 				1AA52F2C2C788A3B006F4969 /* CustomSearchBarView.swift in Sources */,
+				1A4B53692C78E805009DB6A4 /* DetailsCardViewModel.swift in Sources */,
 				1AA52EED2C751C71006F4969 /* Extension + String.swift in Sources */,
 				1AA52F222C767734006F4969 /* ConsultationTypeView.swift in Sources */,
+				1A4B53672C78DD6B009DB6A4 /* FilterViewModel.swift in Sources */,
+				1A4B53752C795F3A009DB6A4 /* CircularImageView.swift in Sources */,
 				1AA52F0F2C75D8F2006F4969 /* FilterView.swift in Sources */,
 				1AA52F172C760696006F4969 /* DoctorImageView.swift in Sources */,
 				1AA52F202C766BE7006F4969 /* PriceInfoView.swift in Sources */,
@@ -361,6 +450,9 @@
 				1AA52F152C760486006F4969 /* DetailsCardView.swift in Sources */,
 				1AA52EA42C73773D006F4969 /* DoctorsListApp.swift in Sources */,
 				1AA52F2E2C78A749006F4969 /* User.swift in Sources */,
+				1A4B53652C78D88A009DB6A4 /* UserViewModel.swift in Sources */,
+				1AA52F312C78B166006F4969 /* UserDataLoader.swift in Sources */,
+				1A4B536B2C78EAC6009DB6A4 /* DoctorPriceViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
